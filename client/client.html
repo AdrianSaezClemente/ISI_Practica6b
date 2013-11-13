@@ -1,0 +1,33 @@
+<head>
+	<title> Chat Alien </title>
+</head>
+<body>
+	<div id='container'>
+    		<canvas id='game' width='320' height='480'></canvas>
+  	</div>
+	<script src='engine.js'></script>
+  	<script src='game.js'></script>
+	<script src='jquery-1.10.2.js' type='text/javascript'></script>
+	{{loginButtons align='right'}} <br>
+	<h1> Chat Alien </h1>
+	{{>Bienvenido}}
+	{{>messages}}
+	{{>input}}
+</body>
+
+<template name="Bienvenido">
+	<p>
+		Bienvenido a nuestro Chat Alien! Por favor, introduce tu login.
+	</p>
+</template>
+
+<template name="messages">
+	{{#each messages}}
+		<strong> {{name}}:</strong>{{message}} <br>
+	{{/each}}
+</template>
+
+<template name="input">
+	<p> Message: <input type='text' id="message">
+	</p>
+</template>
